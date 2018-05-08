@@ -34,6 +34,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation files('libs/pinyin4j-2.5.0.jar')
     implementation project(':farleylibrary')
+//    implementation 'com.github.farley-fu:FarleyLibrary:v1.0.1'
 }
 repositories {
     mavenCentral()
