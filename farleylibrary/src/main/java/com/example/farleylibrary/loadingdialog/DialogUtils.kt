@@ -1,5 +1,6 @@
 package com.example.farleylibrary.loadingdialog
 
+import android.app.Dialog
 import android.content.Context
 import android.view.Gravity
 import android.view.WindowManager
@@ -7,7 +8,7 @@ import com.example.farleylibrary.R
 
 
 object DialogUtils {
-   fun showLoadingDialog(context: Context){
+   fun showLoadingDialog(context: Context): LoadingDialog {
        var dialog = LoadingDialog(context)
        dialog.setCancelable(true) // 是否可以按“返回键”消失
        dialog.setCanceledOnTouchOutside(false) // 点击加载框以外的区域
@@ -22,5 +23,12 @@ object DialogUtils {
        window.setAttributes(lp)
        window.setWindowAnimations(R.style.PopWindowAnimStyle)
        dialog.show()
+       return dialog
    }
+
+    fun closeDialog(mDialogUtils: Dialog?) {
+        if (mDialogUtils != null && mDialogUtils!!.isShowing()) {
+            mDialogUtils!!.dismiss()
+        }
+    }
 }

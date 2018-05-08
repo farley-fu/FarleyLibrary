@@ -18,7 +18,7 @@ class MainActivity: Activity(), Runnable {
         Handler().postDelayed(this@MainActivity,2000)
         dialogShow.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                DialogUtils.showLoadingDialog(this@MainActivity)
+                var dialog = DialogUtils.showLoadingDialog(this@MainActivity)
             }
         })
     }
