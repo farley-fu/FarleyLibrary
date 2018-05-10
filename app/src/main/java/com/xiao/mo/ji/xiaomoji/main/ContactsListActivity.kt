@@ -7,24 +7,22 @@ import android.os.Handler
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.View
-import android.widget.AbsListView
-import android.widget.ListView
+import android.widget.*
+import com.example.farleylibrary.loadingdialog.DialogUtils
 import com.xiao.mo.ji.xiaomoji.R
 import com.xiao.mo.ji.xiaomoji.main.view.WordsNavigation
 import com.xiao.mo.ji.xiaomoji.mvp.MvpActivity
 import com.xiao.mo.ji.xiaomoji.mvp.MvpView
-import android.widget.TextView
 import com.xiao.mo.ji.xiaomoji.main.bean.Person
 import com.xiao.mo.ji.xiaomoji.main.adapter.MyAdapter
 import com.xiao.mo.ji.xiaomoji.main.utils.PinYinUtils
 import java.util.*
 import kotlinx.android.synthetic.main.activity_contacts_list.*
-import android.widget.Toast
 
 
+class ContactsListActivity:MvpActivity<ContactsListPresenter,MvpView>(),MvpView , WordsNavigation.onWordsChangeListener, AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
 
 
-class ContactsListActivity:MvpActivity<ContactsListPresenter,MvpView>(),MvpView , WordsNavigation.onWordsChangeListener, AbsListView.OnScrollListener {
     var myPresenter: ContactsListPresenter?=null
     override fun CreatePresenter(): ContactsListPresenter {
          myPresenter = ContactsListPresenter(this)
@@ -71,8 +69,11 @@ class ContactsListActivity:MvpActivity<ContactsListPresenter,MvpView>(),MvpView 
         val adapter = MyAdapter(this, list!!)
         listView!!.setAdapter(adapter)
         listView!!.setOnScrollListener(this)
+        listView!!.setOnItemClickListener(this)
     }
-
+    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        var dialog = DialogUtils.showLoadingDialog(this@ContactsListActivity)
+    }
     /**
      * 初始化联系人列表信息
      */

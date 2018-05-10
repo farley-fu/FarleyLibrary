@@ -57,7 +57,6 @@ object PinYinUtils {
 
             while (cursor.moveToNext()) {
 
-
                 val contactName = cursor.getString(0)
                 val phoneNumber = cursor.getString(1)
                 var info: ContactsBean? = ContactsBean(contactName,phoneNumber)
