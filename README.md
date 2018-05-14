@@ -60,4 +60,16 @@ This project uses MVP mode
   LogUtils.i("open")
   ```
 
+- ##### Add AutoUpdate
+
+  config:
+
+  ```kotl
+   manifestPlaceholders = [AutoUpdateFileProvider : "com.xxx.xxx.fileprovider"]
+   
+   data = FileProvider.getUriForFile(activity, "com.xxx.xxx.fileprovider", savedFile)//PyUtils
+   
+   AutoUpdate.canUpdata(this)
+  ```
+
   
