@@ -43,3 +43,21 @@ hide:
 - ##### Add MVP
 
 This project uses MVP mode
+
+- ##### Add LogUtils
+
+  config:
+
+  ```Kot
+  LogUtils.canShow = false
+  ```
+
+  use
+
+  ```Kot
+  LogUtils.d("open")
+  LogUtils.e("open")
+  LogUtils.i("open")
+  ```
+
+  
