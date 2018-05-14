@@ -11,16 +11,16 @@ import android.widget.*
 import com.example.farleylibrary.loadingdialog.DialogUtils
 import com.xiao.mo.ji.xiaomoji.R
 import com.xiao.mo.ji.xiaomoji.main.view.WordsNavigation
-import com.xiao.mo.ji.xiaomoji.mvp.MvpActivity
-import com.xiao.mo.ji.xiaomoji.mvp.MvpView
 import com.xiao.mo.ji.xiaomoji.main.bean.Person
 import com.xiao.mo.ji.xiaomoji.main.adapter.MyAdapter
 import com.xiao.mo.ji.xiaomoji.main.utils.PinYinUtils
+import com.xiao.mo.ji.xiaomoji.mvp.MvpActivity
+import com.xiao.mo.ji.xiaomoji.mvp.MvpView
 import java.util.*
 import kotlinx.android.synthetic.main.activity_contacts_list.*
 
 
-class ContactsListActivity:MvpActivity<ContactsListPresenter,MvpView>(),MvpView , WordsNavigation.onWordsChangeListener, AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
+class ContactsListActivity: MvpActivity<ContactsListPresenter, MvpView>(),MvpView , WordsNavigation.onWordsChangeListener, AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
 
 
     var myPresenter: ContactsListPresenter?=null
