@@ -7,7 +7,9 @@ import android.view.View
 import com.example.farleylibrary.loadingdialog.DialogUtils
 import com.example.farleylibrary.loadingdialog.LoadingDialog
 import com.example.farleylibrary.loadingdialog.MessageEvent
+import com.example.farleylibrary.utils.AutoUpdate
 import com.example.farleylibrary.utils.LogUtils
+import com.example.farleylibrary.utils.PyUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
 
@@ -17,7 +19,6 @@ class MainActivity: Activity(), Runnable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        LogUtils.canShow = false
         Handler().postDelayed(this@MainActivity,2000)
         dialogShow.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
@@ -31,7 +32,7 @@ class MainActivity: Activity(), Runnable {
                 LogUtils.d("close")
             }
         })
-
+        AutoUpdate.canUpdata(this)
     }
     var times = 0
     override fun run() {

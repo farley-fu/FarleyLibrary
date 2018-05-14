@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FarleyLibrary</string>
+    <!--自动更新-->
+    <string name="update_title">更新</string>
+    <string name="update_desc">请及时更新，以免对您的使用造成影响！</string>
+    <string name="update_sure">确定</string>
+    <string name="update_tips">提示</string>
+    <string name="downloading">下载中...</string>
 </resources>

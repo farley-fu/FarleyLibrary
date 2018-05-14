@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自动更新-->
+    <string name="update_title">Updated</string>
+    <string name="update_desc">Please update, so as not to affect your use!</string>
+    <string name="update_sure">Determine</string>
+    <string name="update_tips">Tips</string>
+    <string name="downloading">loading...</string>
+</resources>
